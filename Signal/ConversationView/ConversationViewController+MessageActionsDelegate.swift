@@ -135,7 +135,6 @@ extension ConversationViewController: MessageActionsDelegate {
             thread: thread,
         )
         detailVC.detailDelegate = self
-        conversationSplitViewController?.navigationTransitionDelegate = detailVC
         panHandler.messageDetailViewController = detailVC
     }
 
@@ -166,9 +165,9 @@ extension ConversationViewController: MessageActionsDelegate {
                 thread: thread,
             )
             detailVC.detailDelegate = self
-            conversationSplitViewController?.navigationTransitionDelegate = detailVC
         }
 
+        conversationSplitViewController?.navigationTransitionDelegate = detailVC
         navigationController?.pushViewController(detailVC, animated: true)
     }
 
